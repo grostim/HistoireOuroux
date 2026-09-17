@@ -55,3 +55,6 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .hermes/
+
+# Worktrees de travail (ne jamais versionner)
+.worktrees/
