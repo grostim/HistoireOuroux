@@ -46,7 +46,7 @@ Le tirage original fut limité à **200 exemplaires** ; le livre est aujourd'hui
 
 - **Chapitres structurés** : **29** — découpage repris de la table des matières de l'édition originale (voir § 5 des conventions).
 - **Pages vues** : **286** (numérisation Geneanet, une vue par page).
-- **Statut** : ✅ **Transcription terminée** — chapitres narratifs 1 à 27 intégrés, illustrés lorsque nécessaire, compilés et poussés sur `origin/master` ; les vues 285–286 restent les tables de l’édition originale.
+- **Statut** : ✅ **Transcription terminée** — document complet, tables finales comprises, compilé et prêt ; commit et push de cette correction documentaire après vérification finale.
 
 Consultez le tableau détaillé dans [`CONVENTIONS_TRANSCRIPTION.md`](./CONVENTIONS_TRANSCRIPTION.md#5-état-davancement-de-la-transcription).
 

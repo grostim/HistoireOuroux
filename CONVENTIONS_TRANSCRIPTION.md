@@ -201,9 +201,9 @@ Découpage repris de la **table des matières de l'édition originale** (pages i
 | 20f | Progrès social et matériel | 271–274 | 274–277 | Transcrit, compilé |
 | 21 | Conclusion | 275 | 278 | Transcrit, compilé |
 | 22 | Avenas et son église | 276–281 | 279–284 | Transcrit, compilé |
-| — | Table des matières et table des illustrations | 282–283 | 285–286 | Non transcrites (reconstituées automatiquement par LaTeX) |
+| — | Table des matières et table des illustrations | 283–284 | 285–286 | Transcrites, compilées |
 
-**État : transcription terminée pour les chapitres narratifs 1 à 27.** La couverture, les chapitres liminaires, les chapitres historiques et les rubriques finales sont intégrés, illustrés lorsque nécessaire et compilés. Les vues 285–286 correspondent aux tables de l’édition originale et restent hors transcription narrative.
+**État : transcription complète du document, y compris les tables finales.** La couverture, les chapitres liminaires, les chapitres historiques, les rubriques finales, la table des matières et la table des illustrations sont intégrés, illustrés lorsque nécessaire et compilés.
 
 ---
 
