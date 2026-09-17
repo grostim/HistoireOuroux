@@ -182,7 +182,7 @@ Découpage repris de la **table des matières de l'édition originale** (pages i
 | 10 | Grosbois | 62–66 | 65–69 | Transcrit, illustré, compilé |
 | 11 | Autres familles anciennes | 67–71 | 70–74 | Transcrit, compilé |
 | 12 | Alloignet | 72–74 | 75–77 | Transcrit, compilé |
-| 13 | Bourg, population, industries, etc. | 75 | 78 | À transcrire |
+| 13 | Bourg, population, industries, etc. | 75–95 | 78–98 | Transcrit, compilé |
 | 14 | Curés d'Ouroux | 96 | 99 | À transcrire |
 | 15 | La Grande Révolution | 141 | 144 | À transcrire |
 | 16 | Vicaires d'Ouroux | 167 | 170 | À transcrire |
