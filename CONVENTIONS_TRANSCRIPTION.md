@@ -175,7 +175,7 @@ Découpage repris de la **table des matières de l'édition originale** (pages i
 | 3 | Période romaine | 12–19 | 15–22 | Transcrite, illustrée et vérifiée |
 | 4 | Période burgonde | 20–28 | 23–31 | Transcrite, illustrée et vérifiée |
 | 5 | Période féodale | 29–34 | 32–37 | Transcrite, illustrée et vérifiée |
-| 6 | Nagu | 35 | 38 | À transcrire |
+| 6 | Nagu | 35–46 | 38–49 | Transcrit, illustré et compilé |
 | 7 | Arcis | 47 | 50 | À transcrire |
 | 8 | La Carelle | 51 | 54 | À transcrire |
 | 9 | Montaulieu | 61 | 64 | À transcrire |
@@ -203,7 +203,7 @@ Découpage repris de la **table des matières de l'édition originale** (pages i
 | 22 | Avenas et son église | 277 | 280 | À transcrire |
 | — | Table des matières et table des illustrations | 282–283 | 285–286 | Non transcrites (reconstituées automatiquement par LaTeX) |
 
-**État : chapitres 1 à 7 intégrés.** La couverture, les chapitres liminaires et les chapitres 3 à 7 sont transcrits, illustrés lorsque nécessaire, compilés et vérifiés visuellement. Les rubriques restantes sont structurées dans le source et seront traitées une par une.
+**État : chapitres 1 à 8 intégrés.** La couverture, les chapitres liminaires et les chapitres 3 à 8 sont transcrits, illustrés lorsque nécessaire, compilés et vérifiés visuellement. Les rubriques restantes sont structurées dans le source et seront traitées une par une.
 
 ---
 
