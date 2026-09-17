@@ -200,10 +200,10 @@ Découpage repris de la **table des matières de l'édition originale** (pages i
 | 20e | Vieilles maisons | 270 | 273 | Transcrit, compilé |
 | 20f | Progrès social et matériel | 271–274 | 274–277 | Transcrit, compilé |
 | 21 | Conclusion | 275 | 278 | Transcrit, compilé |
-| 22 | Avenas et son église | 277 | 280 | À transcrire |
+| 22 | Avenas et son église | 276–281 | 279–284 | Transcrit, compilé |
 | — | Table des matières et table des illustrations | 282–283 | 285–286 | Non transcrites (reconstituées automatiquement par LaTeX) |
 
-**État : chapitres 1 à 8 intégrés.** La couverture, les chapitres liminaires et les chapitres 3 à 8 sont transcrits, illustrés lorsque nécessaire, compilés et vérifiés visuellement. Les rubriques restantes sont structurées dans le source et seront traitées une par une.
+**État : transcription terminée pour les chapitres narratifs 1 à 27.** La couverture, les chapitres liminaires, les chapitres historiques et les rubriques finales sont intégrés, illustrés lorsque nécessaire et compilés. Les vues 285–286 correspondent aux tables de l’édition originale et restent hors transcription narrative.
 
 ---
 
