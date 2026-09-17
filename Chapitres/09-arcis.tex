@@ -25,70 +25,48 @@ Quels furent les premiers possesseurs du fief d'Arcis ? Nous devons ici nous con
 Henri de Pizeys appartenait à une noble et puissante famille qui portait le nom du fief de Pizeys situé sur la paroisse de St Jean d'Ardières.
 
 % --- Page imprimée 49 — vue 52
-Armes des
+% La page originale juxtapose le panneau héraldique à gauche et le
+% texte courant à droite. Les cinq entrées sont volontairement composées
+% en petites unités pour conserver cette lecture et cette hiérarchie.
+\newcommand{\arcisblason}[3]{%
+    \noindent
+    \begin{minipage}[t]{0.49\linewidth}
+        \vspace{0pt}\centering
+        \includegraphics[width=\linewidth]{#1}%
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.47\linewidth}
+        \vspace{0pt}\scriptsize\raggedright\setlength{\parskip}{0pt}
+        #2\\[-0.1ex]
+        #3
+    \end{minipage}\par\medskip
+}%
+\clearpage
+\noindent
+\begin{minipage}[t]{0.43\textwidth}
+    \vspace{0pt}
+    \begin{center}\textsc{Armes des}\end{center}
+    \setlength{\parskip}{0pt}
+    \arcisblason{Illustrations/illus-arcis-armoiries-nanton.png}{De Nanton}{Seigneur de Pizey\\De sinople\\à la croix d'or.}
+    \arcisblason{Illustrations/illus-arcis-armoiries-pizeys.png}{De Piseys}{D'argent\\au chef bandé d'or et d'azur\\de 6 pièces}
+    \arcisblason{Illustrations/illus-arcis-armoiries-madelaine.png}{De La Madelaine-Ragny}{Seigneur de Corcelles\\Écartelé au 1 d'hermine\\à 3 bandes de gueules,\\chargées de 9 coquilles d'or.\\2, 5 et 2 ;\\au 2, d'or, à la croix\\ancrée de gueules ;\\au 3 de gueules, à\\3 bandes d'argent ;\\au 4 d'or et d'azur,\\de 6 pièces ;\\à la bordure de gueules\\Devise :\\Posita Feritate nitescit}
+    \arcisblason{Illustrations/illus-arcis-armoiries-tircuy.png}{Tircuy de Corcelles}{Seigneur de Corcelles, d'Arcis\\de Flourye\\D'azur, à la fasce d'or}
+    \arcisblason{Illustrations/illus-arcis-armoiries-bottu.png}{Bottu de la Barmondière}{Seigneur de Montgré\\D'azur, au chevron d'or\\accompagné en pointe\\d'un lion du même,\\au chef d'or.}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.54\textwidth}
+    \vspace{0pt}\small
+    Le fief d'Arcis passa, au siècle suivant, à la famille de Nagu-Varennes. On sait que Pierre Nagu le possédait en 1463.
 
-\begin{center}
-    \includegraphics[width=0.16\textwidth]{Illustrations/illus-arcis-armoiries-nanton.png}
-\end{center}
-De Nanton
-Seigneur de Pizey
-De sinople
-à la croix d'or.
+    Le 1er Mars 1539, noble Gérard de la Maddeleine-Ragny donna à son tour le dénombrement de ce fief.
 
-\begin{center}
-    \includegraphics[width=0.16\textwidth]{Illustrations/illus-arcis-armoiries-pizeys.png}
-\end{center}
-De Piseys
-D'argent
-au chef bandé d'or et d'azur
-de 6 pièces
+    Vers la fin du XVIe siècle, Arcis fut vendu à un gentilhomme bourguignon, noble Lazare de Tircuy de la Barre, écuyer, qui en fournit le dénombrement le 2 Juillet 1601.
 
-\begin{center}
-    \includegraphics[width=0.16\textwidth]{Illustrations/illus-arcis-armoiries-madelaine.png}
-\end{center}
-De La Madelaine-Ragny
-Seigneur de Corcelles
-Écartelé au 1 d'hermine
-à 3 bandes de gueules,
-chargées de 9 coquilles d'or.
-2, 5 et 2 ;
-au 2, d'or, à la croix
-ancrée de gueules ;
-au 3 de gueules, à
-3 bandes d'argent ;
-au 4 d'or et d'azur,
-de 6 pièces ;
-à la bordure de gueules
-Devise :
-Posita Feritate nitescit
+    Un acte de vente nous signale un nouveau propriétaire. Par contrat passé en 1659, messire Louis Damarin du Rousset, écuyer, seigneur de Corcelles et d'Arcis achetait le domaine dit de Métrat, aujourd'hui Fontmartin, paroisse de Vauxrenard, d'Antoine de Lafont. Un extrait des rôles pour les étapes nous le signale comme possédant deux domaines sur Ouroux en 1661.
 
-\begin{center}
-    \includegraphics[width=0.16\textwidth]{Illustrations/illus-arcis-armoiries-tircuy.png}
-\end{center}
-Tircuy de Corcelles
-Seigneur de Corcelles, d'Arcis
-de Flourye
-D'azur, à la fasce d'or
-
-\begin{center}
-    \includegraphics[width=0.16\textwidth]{Illustrations/illus-arcis-armoiries-bottu.png}
-\end{center}
-Bottu de la Barmondière
-Seigneur de Montgré
-D'azur, au chevron d'or
-accompagné en pointe
-d'un lion du même,
-au chef d'or.
-
-Le fief d'Arcis passa, au siècle suivant, à la famille de Nagu-Varennes. On sait que Pierre Nagu le possédait en 1463.
-
-Le 1er Mars 1539, noble Gérard de la Maddeleine-Ragny donna à son tour le dénombrement de ce fief.
-
-Vers la fin du XVIe siècle, Arcis fut vendu à un gentilhomme bourguignon, noble Lazare de Tircuy de la Barre, écuyer, qui en fournit le dénombrement le 2 Juillet 1601.
-
-Un acte de vente nous signale un nouveau propriétaire. Par contrat passé en 1659, messire Louis Damarin du Rousset, écuyer, seigneur de Corcelles et d'Arcis achetait le domaine dit de Métrat, aujourd'hui Fontmartin, paroisse de Vauxrenard, d'Antoine de Lafont. Un extrait des rôles pour les étapes nous le signale comme possédant deux domaines sur Ouroux en 1661.
-
-Vers la fin du même siècle, Arcis fut acquis par François de la Barmondière dont la famille originaire d'Auvergne remontait à une haute antiquité. Il fit de 1706 à 1713 de nombreuses réparations dans ses domaines d'Arcis, des Mélinands et de Mettrat. Son représentant à Ouroux à cette époque était Monsieur Duligier Testenoire. Nous n'avons aucun détail sur lui et le nom de son successeur ne nous a pas été conservé. Son petit fils fut François Louis de la Barmondière, seigneur de Montgré, Arcis et
+    Vers la fin du même siècle, Arcis fut acquis par François de la Barmondière dont la famille originaire d'Auvergne remontait à une haute antiquité. Il fit de 1706 à 1713 de nombreuses réparations dans ses domaines d'Arcis, des Mélinands et de Mettrat. Son représentant à Ouroux à cette époque était Monsieur Duligier Testenoire. Nous n'avons aucun détail sur lui et le nom de son successeur ne nous a pas été conservé. Son petit fils fut François Louis de la Barmondière, seigneur de Montgré, Arcis et
+\end{minipage}
+\clearpage
 % --- Page imprimée 50 — vue 53 (suite)
 autres lieux. Il fut fait prisonnier pendant la grande Révolution et guillotiné. Il laissa une fille unique morte sans alliance. Celle-ci céda ses biens à Monsieur de Verna qui vendit Arcis à Monsieur Berloty, notaire à Lyon. Actuellement Arcis appartient aux deux familles Boffard-Berloty, Rambaud-Berloty et à leurs descendants.
 
