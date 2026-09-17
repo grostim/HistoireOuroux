@@ -8,7 +8,7 @@ Ce document consigne l'ensemble des règles éditoriales, typographiques, techni
 
 ### 1.1 Dépôt Git
 - Le projet est versionné sous Git dans le répertoire racine.
-- Les scans originaux sont conservés dans `Originaux/` : le PDF source intégral (`Histoire d'Ouroux.pdf`) et les vues extraites `Originaux/Pages/Page-001.jpg` à `Page-286.jpg`.
+- Les scans originaux sont conservés dans `Originaux/` : le PDF source intégral (`Histoire d'Ouroux.pdf`) et les vues extraites `Originaux/Pages/Page-001.png` à `Page-286.png`.
 - Le document principal est `Histoire d'Ouroux.tex`.
 - Les fichiers auxiliaires LaTeX (`*.aux`, `*.log`, `*.toc`, etc.) sont exclus via `.gitignore`.
 
@@ -109,16 +109,19 @@ L'ouvrage numérisé comporte **deux numérotations qu'il ne faut jamais confond
 - L'édition originale comporte **123 illustrations** numérotées, recensées par sa propre « Table des illustrations » (pages imprimées 282-283).
 - Chaque illustration est intégrée à l'endroit où elle apparaît dans l'original, avec sa légende telle qu'imprimée.
 - Les dessins ont été gravés sur stencils par **M. Mondon de Guillin** (château du Sauzey à Avenas), comme le rappelle l'avertissement.
-- **Cadrage des illustrations** : chaque illustration est recadrée depuis le rendu de la vue à 280 ppp par `scripts/extract_illustration.py` (résolution native du fac-similé, aucun ré-échantillonnage, pixels conservés à l'identique). Le cadrage doit contenir **la totalité du motif** : aucun trait du dessin ne doit être tronqué. Les marges imprimées de l'original sont inégales autour d'un dessin — un cadrage « à l'œil » ou aligné sur un bord coupe le motif.
+- **Cadrage des illustrations** : chaque illustration est recadrée depuis le rendu de la vue à 280 ppp par `scripts/extract_illustration.py` (résolution native du fac-similé, aucun ré-échantillonnage, pixels conservés à l'identique). Le cadrage doit contenir **la totalité du motif**, de la tête aux pieds s'il s'agit d'un personnage, ainsi que le cadre et la légende quand ils font partie de l'illustration. Aucun trait ne doit être tronqué. Les marges imprimées de l'original sont inégales autour d'un dessin — un cadrage « à l'œil » ou aligné sur un bord coupe le motif.
+- **Position relative** : l'emplacement de l'image par rapport au texte fait partie de la mise en page transcrite. Relever si l'image est à gauche, à droite, centrée, au-dessus ou au-dessous du texte, et quel paragraphe l'introduit. Quand le texte original entoure une image, utiliser `wrapfigure` du côté correspondant (`{l}` ou `{r}`), placé immédiatement avant le paragraphe qui commence l'habillage ; ne pas remplacer cette composition par une figure flottante isolée. Régler largeur et éventuel `\vspace` en comparant le nombre de lignes habillées au scan.
 - **Contrôle obligatoire** avant de référencer une illustration dans le source : `scripts/check_illustration.py <vue> <x> <y> <w> <h> <nom> --cercle` (ajouter `--bord` quand le sujet ne touche pas les bords dans l'original). Le script vérifie la fidélité au scan, l'absence d'encre sur les bords, et la couverture complète de l'arc pour les vignettes circulaires.
-- Les planches hors texte et les tableaux du 1er au 10e chapitre (illustrations 70 à 99, pages imprimées 205 à 213) demandent une vérification attentive de l'orientation : utiliser `pdflscape` si la reproduction l'exige.
+- **Contrôle après compilation** : une extraction correcte ne suffit pas. Rasteriser chaque page PDF qui contient l'illustration et vérifier visuellement les quatre bords, le cadre, la légende, l'échelle, le ratio, le découpage éventuel par LaTeX et le flux du texte à droite, à gauche et sous l'image. Les numéros de vues source ne prédisent pas les numéros des pages du PDF compilé, car les figures et les pages liminaires déplacent la pagination.
 
 ### 3.4 Notes de bas de page (`\footnote`)
 - Toutes les notes imprimées de l'ouvrage sont scrupuleusement préservées via `\footnote{...}`.
 - Les notes ajoutées par le transcripteur (lecture incertaine, clarification, référence à une source) doivent porter la mention explicite `(Note du transcripteur)`.
 
 ### 3.5 Fidélité au texte et corrections
-- Transcription réalisée par **lecture visuelle directe** des vues à haute résolution (280 ppp) ; pas d'OCR parallèle ni de double lecture.
+- Transcription réalisée par **lecture visuelle directe** des vues à haute résolution (280 ppp), avec l'OCR comme aide de localisation et agy/vision comme seconde lecture contrôlée.
+- **Contrôle croisé obligatoire** : comparer la sortie agy à l'OCR, exécuter le triage des mots douteux, puis vérifier visuellement les suspects et les passages à faible recouvrement. Une page essentiellement illustrée peut avoir un faible recouvrement sans être incomplète ; elle doit alors être contrôlée par vision.
+- **Citations et documents** : toute traduction de charte, tout extrait documentaire ou tout passage explicitement présenté comme une citation est encadré par les guillemets visibles dans la source, y compris lorsqu'il s'étend sur plusieurs paragraphes. Ne jamais transformer silencieusement une citation en prose ordinaire.
 - **Corrections systématiques des erreurs mécaniques** de la composition :
   - confusion `I` majuscule / chiffre `1` dans les nombres et les dates (`I952` → `1952`, `I886` → `1886`) ;
   - espacements anormaux : `collaboré,d'une` → `collaboré, d'une` ;
@@ -166,12 +169,12 @@ Découpage repris de la **table des matières de l'édition originale** (pages i
 
 | # | Rubrique | Page impr. | Vue | Statut |
 | :---: | :--- | :---: | :---: | :---: |
-| — | Page de titre, avertissement, liste des souscripteurs, préface | 3–6 | 6–9 | À transcrire |
-| 1 | Étymologie du nom d'Ouroux | 7 | 10 | À transcrire |
-| 2 | Topographie | 9 | 12 | À transcrire |
-| 3 | Période romaine | 12 | 15 | À transcrire |
-| 4 | Période burgonde | 20 | 23 | À transcrire |
-| 5 | Période féodale | 29 | 32 | À transcrire |
+| — | Page de titre, avertissement, liste des souscripteurs, préface | 3–6 | 6–9 | Transcrites et vérifiées |
+| 1 | Étymologie du nom d'Ouroux | 7–8 | 10–11 | Transcrite et vérifiée |
+| 2 | Topographie | 9–11 | 12–14 | Transcrite et vérifiée |
+| 3 | Période romaine | 12–19 | 15–22 | Transcrite, illustrée et vérifiée |
+| 4 | Période burgonde | 20–28 | 23–31 | Transcrite, illustrée et vérifiée |
+| 5 | Période féodale | 29–34 | 32–37 | Transcrite, illustrée et vérifiée |
 | 6 | Nagu | 35 | 38 | À transcrire |
 | 7 | Arcis | 47 | 50 | À transcrire |
 | 8 | La Carelle | 51 | 54 | À transcrire |
@@ -200,7 +203,7 @@ Découpage repris de la **table des matières de l'édition originale** (pages i
 | 22 | Avenas et son église | 277 | 280 | À transcrire |
 | — | Table des matières et table des illustrations | 282–283 | 285–286 | Non transcrites (reconstituées automatiquement par LaTeX) |
 
-**État : squelette initialisé.** La structure des 29 chapitres, les conventions et le pipeline de publication sont en place. La transcription du texte reste à réaliser, rubrique par rubrique.
+**État : chapitres 1 à 7 intégrés.** La couverture, les chapitres liminaires et les chapitres 3 à 7 sont transcrits, illustrés lorsque nécessaire, compilés et vérifiés visuellement. Les rubriques restantes sont structurées dans le source et seront traitées une par une.
 
 ---
 
