@@ -179,7 +179,7 @@ Découpage repris de la **table des matières de l'édition originale** (pages i
 | 7 | Arcis | 47–50 | 50–53 | Transcrit, compilé |
 | 8 | La Carelle | 51–60 | 54–63 | Transcrit, compilé |
 | 9 | Montaulieu | 57–61 | 60–64 | Transcrit, illustré, compilé |
-| 10 | Grosbois | 62 | 65 | À transcrire |
+| 10 | Grosbois | 62–66 | 65–69 | Transcrit, illustré, compilé |
 | 11 | Autres familles anciennes | 67 | 70 | À transcrire |
 | 12 | Alloignet | 72 | 75 | À transcrire |
 | 13 | Bourg, population, industries, etc. | 75 | 78 | À transcrire |
