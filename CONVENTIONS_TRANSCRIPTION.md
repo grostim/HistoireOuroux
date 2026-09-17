@@ -109,6 +109,8 @@ L'ouvrage numérisé comporte **deux numérotations qu'il ne faut jamais confond
 - L'édition originale comporte **123 illustrations** numérotées, recensées par sa propre « Table des illustrations » (pages imprimées 282-283).
 - Chaque illustration est intégrée à l'endroit où elle apparaît dans l'original, avec sa légende telle qu'imprimée.
 - Les dessins ont été gravés sur stencils par **M. Mondon de Guillin** (château du Sauzey à Avenas), comme le rappelle l'avertissement.
+- **Cadrage des illustrations** : chaque illustration est recadrée depuis le rendu de la vue à 280 ppp par `scripts/extract_illustration.py` (résolution native du fac-similé, aucun ré-échantillonnage, pixels conservés à l'identique). Le cadrage doit contenir **la totalité du motif** : aucun trait du dessin ne doit être tronqué. Les marges imprimées de l'original sont inégales autour d'un dessin — un cadrage « à l'œil » ou aligné sur un bord coupe le motif.
+- **Contrôle obligatoire** avant de référencer une illustration dans le source : `scripts/check_illustration.py <vue> <x> <y> <w> <h> <nom> --cercle` (ajouter `--bord` quand le sujet ne touche pas les bords dans l'original). Le script vérifie la fidélité au scan, l'absence d'encre sur les bords, et la couverture complète de l'arc pour les vignettes circulaires.
 - Les planches hors texte et les tableaux du 1er au 10e chapitre (illustrations 70 à 99, pages imprimées 205 à 213) demandent une vérification attentive de l'orientation : utiliser `pdflscape` si la reproduction l'exige.
 
 ### 3.4 Notes de bas de page (`\footnote`)
