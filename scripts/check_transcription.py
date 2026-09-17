@@ -54,6 +54,12 @@ EXCEPTIONS = {
     "evèque", "evéque", "exigèrent", "prètres",
     # abréviations
     "st", "ste", "mgr", "mr", "mme", "etc", "n", "s",
+    # graphies d'auteur vérifiées sur le scan (à ne pas « corriger ») :
+    # accents manquants ou déplacés relevés dans l'édition de 1952
+    "hierarchie", "evéques", "evèque", "evéque", "chateau", "disparaitre",
+    "dégats", "aprés", "gite", "oeil", "oeuvre", "paiens", "cotoyant",
+    "aujourd", "hui", "entr", "moëllons", "ecclésiastique", "arrétant",
+    "prés", "parait", "donné", "deftinées", "donnaer", "ecclésiatique",
 }
 
 # Mots : on garde le mot complet, apostrophes internes comprises, puis on teste

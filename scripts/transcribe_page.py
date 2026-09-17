@@ -53,24 +53,39 @@ RÈGLES DE TRANSCRIPTION :
    - mots collés par l'absence d'espace : « ORATORIUM,ora toire » ->
      « ORATORIUM, oratoire », « chapelles.Nous » -> « chapelles. Nous » ;
    - césures de fin de ligne réunies, mots coupés recomposés.
-5. PRÉSERVE scrupuleusement les graphies de l'auteur, MÊME SI ELLES SONT FAUTES :
-   un mot valide du français écrit différemment de l'usage attendu est conservé
-   tel quel (ex. « Chartres » pour « Chartes », « ager » pour « ager »). Tu dois
-   reproduire le texte imprimé, pas le réécrire. N'invente aucune correction
-   orthographique de ton propre chef.
-6. CONSERVE : le vocabulaire et les tournures d'époque, les abréviations
-   (St, Ste, Mr, Mgr, XVème si le texte le porte), les graphies anciennes des
-   noms de lieux, les chiffres et dates tels qu'imprimés.
-7. Les citations latines sont conservées en latin, entre guillemets, sans les traduire.
-8. Respecte les paragraphes : commence un nouveau paragraphe là où l'original en
+5. ORTHOGRAPHE — règle du projet (identique à BenoitCoste et FelixBerloty) : les
+   fautes d'orthographe ÉVIDENTES de l'édition originale sont corrigées dans
+   notre transcription. Cela couvre :
+   - les accents omis, faux ou déplacés (l'édition de 1952, composée au stencil
+     sur du matériel bon marché, en omet systématiquement) :
+     « chateau » -> « château », « disparaitre » -> « disparaître »,
+     « dégats » -> « dégâts », « aprés » -> « après », « gite » -> « gîte »,
+     « oeil » -> « œil », « paiens » -> « païens », « hierarchie » -> « hiérarchie »,
+     « évéques » -> « évêques », « s'arrétant » -> « s'arrêtant » ;
+   - les coquilles et fautes banales : « donaer » -> « donner », « deftinées » ou
+     « dfinées » -> « destinées », « prénons » -> « prénoms », « plustôt » ->
+     « plutôt », « n'evant » -> « n'ayant », « ecclésiatique » ->
+     « ecclésiastique », « Chartres » (au sens de chartes) -> « Chartes » ;
+   - les accords grammaticaux manifestement fautifs.
+6. NE MODIFIE PAS en revanche : le vocabulaire et les tournures d'époque, les
+   abréviations (St, Ste, Mr, Mgr, XVème/IX°), les noms propres et toponymes
+   (même d'aspect ancien : « Loittes », « Razay »), et les CITATIONS LATINES,
+   qui sont reproduites littéralement telles qu'imprimées (« amnid », « Graonna,
+   fluvius », « Crahonnae »). Une citation n'est jamais corrigée.
+7. Casse des noms propres : les noms imprimés en capitales espacées sont rendus
+   en casse normale (Title Case) — « DULIGIER » -> « Duligier », « St-ANTOINE
+   d'OUROUX » -> « St-Antoine d'Ouroux ». Seuls les chiffres romains et les
+   sigles d'époque gardent des majuscules.
+8. Les citations latines sont conservées en latin, entre guillemets, sans les traduire.
+9. Respecte les paragraphes : commence un nouveau paragraphe là où l'original en
    commence un (alinéa visible par un retrait).
-9. ILLUSTRATIONS : si la vue contient un ou plusieurs dessins, gravures ou
+10. ILLUSTRATIONS : si la vue contient un ou plusieurs dessins, gravures ou
    photographies, insère à l'endroit exact où ils apparaissent une ligne de la forme :
    [[ILLUSTRATION: légende exacte telle qu'imprimée|position]]
    où position vaut haut, milieu ou bas selon l'emplacement dans la page.
    Si le dessin n'a pas de légende, écris [[ILLUSTRATION: sans légende|position]].
    Ne décris pas les illustrations, transcris seulement leur légende.
-10. Si un mot reste illisible malgré le zoom, écris [ILLISIBLE: ton hypothèse] :
+11. Si un mot reste illisible malgré le zoom, écris [ILLISIBLE: ton hypothèse] :
     ne devine jamais silencieusement.
 
 SORTIE ATTENDUE : uniquement le texte transcrit, sans commentaire ni préambule."""
