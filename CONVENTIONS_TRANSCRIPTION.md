@@ -185,7 +185,7 @@ Découpage repris de la **table des matières de l'édition originale** (pages i
 | 13 | Bourg, population, industries, etc. | 75–95 | 78–98 | Transcrit, compilé |
 | 14 | Curés d'Ouroux | 96–140 | 99–143 | Transcrit, compilé |
 | 15 | La Grande Révolution | 141–166 | 144–169 | Transcrit, compilé |
-| 16 | Vicaires d'Ouroux | 167 | 170 | À transcrire |
+| 16 | Vicaires d'Ouroux | 167–175 | 170–178 | Transcrit, compilé |
 | 17 | Prêtres nés à Ouroux | 176 | 179 | À transcrire |
 | 18 | L'église d'Ouroux | 181 | 184 | À transcrire |
 | 19 | Les écoles d'Ouroux | 231 | 234 | À transcrire |
