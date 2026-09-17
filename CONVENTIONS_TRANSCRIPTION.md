@@ -192,13 +192,13 @@ Découpage repris de la **table des matières de l'édition originale** (pages i
 | 19a | École de filles | 233–244 | 236–247 | Transcrit, compilé |
 | 19b | École de garçons | 245–256 | 248–259 | Transcrit, compilé |
 | 19c | Notes sur la laïcisation et les secours accordés aux écoles libres | 257–260 | 260–263 | Transcrit, compilé |
-| 20 | Période contemporaine | 261 | 264 | À transcrire |
-| 20a | Un maire chrétien | 262 | 265 | À transcrire |
-| 20b | Guerre 1914–1918 | 264 | 267 | À transcrire |
-| 20c | Catastrophes aériennes | 267 | 270 | À transcrire |
-| 20d | Guerre 1939–1945, bombardement | 268 | 271 | À transcrire |
-| 20e | Vieilles maisons | 270 | 273 | À transcrire |
-| 20f | Progrès social et matériel | 271 | 274 | À transcrire |
+| 20 | Période contemporaine | 261–274 | 264–277 | Transcrit, compilé |
+| 20a | Un maire chrétien | 262–263 | 265–266 | Transcrit, compilé |
+| 20b | Guerre 1914–1918 | 264–267 | 267–270 | Transcrit, compilé |
+| 20c | Catastrophes aériennes | 267 | 270 | Transcrit, compilé |
+| 20d | Guerre 1939–1945, bombardement | 268–269 | 271–272 | Transcrit, compilé |
+| 20e | Vieilles maisons | 270 | 273 | Transcrit, compilé |
+| 20f | Progrès social et matériel | 271–274 | 274–277 | Transcrit, compilé |
 | 21 | Conclusion | 275 | 278 | À transcrire |
 | 22 | Avenas et son église | 277 | 280 | À transcrire |
 | — | Table des matières et table des illustrations | 282–283 | 285–286 | Non transcrites (reconstituées automatiquement par LaTeX) |
