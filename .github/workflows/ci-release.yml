@@ -1,0 +1,184 @@
+name: Validation LaTeX & Publication des Releases
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Compilation LaTeX et Génération des Formats (PDF, EPUB, Markdown)
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.versioning.outputs.tag }}
+      rel_type: ${{ steps.versioning.outputs.rel_type }}
+      commit_msg: ${{ steps.versioning.outputs.commit_msg }}
+
+    steps:
+      - name: Récupération du dépôt
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Calcul du numéro de version & Type de release
+        id: versioning
+        run: |
+          # Récupération du plus grand tag ou valeur par défaut
+          LATEST_TAG=$(git tag --list 'v*' | sort -V | tail -n 1)
+          LATEST_TAG=${LATEST_TAG:-v0.0.0}
+          RAW_VERSION="${LATEST_TAG#v}"
+
+          MAJOR=$(echo "$RAW_VERSION" | cut -d. -f1)
+          MINOR=$(echo "$RAW_VERSION" | cut -d. -f2)
+          PATCH=$(echo "$RAW_VERSION" | cut -d. -f3)
+
+          MAJOR=${MAJOR:-0}
+          MINOR=${MINOR:-0}
+          PATCH=${PATCH:-0}
+
+          COMMIT_TITLE=$(git log -1 --pretty=%s)
+          echo "Titre du commit : $COMMIT_TITLE"
+
+          # Détection du type de release selon la convention (titre ancré uniquement)
+          if echo "$COMMIT_TITLE" | grep -qiE "^feat"; then
+            NEW_MAJOR=$((MAJOR + 1))
+            NEW_TAG="v${NEW_MAJOR}.0.0"
+            REL_TYPE="Release Majeure (Nouvelle transcription)"
+          elif echo "$COMMIT_TITLE" | grep -qiE "^(fix|style|refactor|docs|correction)"; then
+            NEW_MINOR=$((MINOR + 1))
+            NEW_TAG="v${MAJOR}.${NEW_MINOR}.0"
+            REL_TYPE="Release Mineure (Corrections / Ajustements)"
+          else
+            NEW_PATCH=$((PATCH + 1))
+            NEW_TAG="v${MAJOR}.${MINOR}.${NEW_PATCH}"
+            REL_TYPE="Release de Maintenance"
+          fi
+
+          echo "Nouveau tag : $NEW_TAG ($REL_TYPE)"
+          echo "tag=$NEW_TAG" >> "$GITHUB_OUTPUT"
+          echo "rel_type=$REL_TYPE" >> "$GITHUB_OUTPUT"
+          COMMIT_MSG=$(git log -1 --pretty=%B)
+          DELIMITER="ghadelimiter_$(date +%s%N)_${RANDOM}"
+          while grep -Fqx "$DELIMITER" <<< "$COMMIT_MSG"; do
+            DELIMITER="${DELIMITER}_x"
+          done
+          {
+            echo "commit_msg<<$DELIMITER"
+            echo "$COMMIT_MSG"
+            echo "$DELIMITER"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Préparation des sources avec le numéro de release
+        env:
+          RELEASE_VERSION: ${{ steps.versioning.outputs.tag }}
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import os
+
+          source = Path("Histoire d'Ouroux.tex").read_text()
+          default = r"\providecommand{\releaseversion}{Version de développement}"
+          replacement = rf"\providecommand{{\releaseversion}}{{{os.environ['RELEASE_VERSION']}}}"
+          if source.count(default) != 1:
+              raise SystemExit("La définition de la version LaTeX est introuvable ou ambiguë")
+          Path("Histoire d'Ouroux.release.tex").write_text(
+              source.replace(default, replacement)
+          )
+          PY
+
+      - name: Installation des dépendances (TeX Live & Pandoc)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            texlive-latex-base \
+            texlive-latex-recommended \
+            texlive-latex-extra \
+            texlive-lang-french \
+            texlive-fonts-recommended \
+            lmodern \
+            cm-super \
+            pandoc
+
+      - name: Compilation LaTeX en PDF
+        run: |
+          # Double passe pdflatex pour la table des matières
+          pdflatex -interaction=nonstopmode -halt-on-error \
+            "Histoire d'Ouroux.release.tex"
+          pdflatex -interaction=nonstopmode -halt-on-error \
+            "Histoire d'Ouroux.release.tex"
+          # Renommage de l'artefact PDF sans espaces
+          cp "Histoire d'Ouroux.release.pdf" "Histoire_d_Ouroux.pdf"
+
+      - name: Génération du format Markdown via Pandoc
+        run: |
+          pandoc "Histoire d'Ouroux.release.tex" \
+            -f latex -t gfm \
+            --wrap=none \
+            -o "Histoire_d_Ouroux.md"
+
+      - name: Génération du format EPUB via Pandoc
+        run: |
+          pandoc "Histoire d'Ouroux.release.tex" \
+            -f latex -t epub3 \
+            --toc --toc-depth=2 \
+            --metadata title="Histoire d'Ouroux" \
+            --metadata author="Germain Odouard et Jh. Aubonnet" \
+            --metadata language="fr" \
+            -o "Histoire_d_Ouroux.epub"
+
+      - name: Sauvegarde des artefacts de compilation
+        uses: actions/upload-artifact@v4
+        with:
+          name: histoire-ouroux-documents
+          path: |
+            Histoire_d_Ouroux.pdf
+            Histoire_d_Ouroux.epub
+            Histoire_d_Ouroux.md
+
+  release:
+    name: Création automatique de la Release GitHub
+    needs: build
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Récupération du dépôt
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Téléchargement des artefacts
+        uses: actions/download-artifact@v4
+        with:
+          name: histoire-ouroux-documents
+          path: ./dist
+
+      - name: Publication de la Release GitHub avec les 3 formats
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ needs.build.outputs.tag }}
+          name: ${{ needs.build.outputs.tag }} - ${{ needs.build.outputs.rel_type }}
+          body: |
+            ## ${{ needs.build.outputs.rel_type }}
+
+            **Détail du commit :**
+            > ${{ needs.build.outputs.commit_msg }}
+
+            ---
+            ### 📥 Téléchargement direct des documents :
+            - 📕 **[Version PDF (Mise en page LaTeX)](https://github.com/${{ github.repository }}/releases/download/${{ needs.build.outputs.tag }}/Histoire_d_Ouroux.pdf)**
+            - 📱 **[Version EPUB (Liseuses / E-readers)](https://github.com/${{ github.repository }}/releases/download/${{ needs.build.outputs.tag }}/Histoire_d_Ouroux.epub)**
+            - 📄 **[Version Markdown](https://github.com/${{ github.repository }}/releases/download/${{ needs.build.outputs.tag }}/Histoire_d_Ouroux.md)**
+          files: |
+            ./dist/Histoire_d_Ouroux.pdf
+            ./dist/Histoire_d_Ouroux.epub
+            ./dist/Histoire_d_Ouroux.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

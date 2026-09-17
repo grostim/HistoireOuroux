@@ -1,0 +1,57 @@
+# Fichiers auxiliaires LaTeX
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.dvi
+*.fdb_latexmk
+*.fls
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
+*.log
+*.nav
+*.nlo
+*.nls
+*.out
+*.pdfpc
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+*.xdv
+
+# Fichiers de sortie compilés (conserver les originaux)
+/Histoire d'Ouroux.pdf
+*.synctex(busy)
+
+# Fichiers temporaires CI (copies *.release.tex générées)
+*.release.tex
+*.release.pdf
+
+# Scripts temporaires et images de travail
+scratch*
+*.tmp
+
+# Données et secrets — jamais versionnés
+.env
+.env.*
+!.env.example
+
+# Fichiers système et éditeurs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Caches et métadonnées de travail non publiables
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.hermes/

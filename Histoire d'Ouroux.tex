@@ -1,0 +1,248 @@
+\documentclass[11pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{pdflscape}
+\usepackage{pdfpages}
+\geometry{margin=2.5cm, headheight=14pt}
+\usepackage{parskip}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{qrcode}
+
+% Configuration des en-têtes et pieds de page
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textit{Histoire d'Ouroux}}
+\fancyhead[R]{\small\textit{Chapitre \thechapter}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Numéro de release injecté par le workflow ; valeur locale par défaut.
+\providecommand{\releaseversion}{Version de développement}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{1.5cm}
+    {\Huge \textbf{Histoire d'Ouroux}\par}
+    \vspace{1cm}
+    {\Large \textbf{Germain Odouard et Jh. Aubonnet}\par}
+    \vspace{0.6cm}
+    {\small \textit{Écrit par l'abbé Germain Odouard, vicaire à Ouroux de 1879 à 1892 ;}\par}
+    {\small \textit{préfacé par l'abbé Marcel Sivignon ; complété et imprimé par}\par}
+    {\small \textit{l'abbé Jh. Aubonnet, curé d'Ouroux, en 1952.}\par}
+    \vfill
+    \begin{flushright}
+        {\scriptsize \textit{\releaseversion}\par}
+    \end{flushright}
+\end{titlepage}
+
+\newpage
+\pagestyle{plain}
+\tableofcontents
+\newpage
+
+\chapter*{Note du transcripteur}
+\addcontentsline{toc}{chapter}{Note du transcripteur}
+
+La présente transcription a été réalisée à partir de l'exemplaire numérisé de \textit{Histoire d'Ouroux} de Germain Odouard et Jh. Aubonnet, conservé dans la bibliothèque généalogique de Geneanet (notice du livre \texttt{19016}). L'ouvrage original compte 286 vues numérisées et a été imprimé à Ouroux en 1952.
+
+La transcription a été réalisée avec le plus grand soin, en lecture attentive du document original. Les erreurs manifestes du tapuscrit ont été corrigées, tandis que le vocabulaire, les tournures d'époque et les graphies des noms propres sont conservés. Malgré les vérifications effectuées, des erreurs de transcription peuvent toutefois subsister.
+
+Toute erreur relevée peut être signalée sur la page GitHub du projet :
+
+\begin{center}
+    \href{https://github.com/grostim/HistoireOuroux/issues}{\textbf{Signaler une erreur de transcription sur GitHub}}
+
+    \vspace{0.5cm}
+    \qrcode[height=3cm]{https://github.com/grostim/HistoireOuroux/issues}
+\end{center}
+
+Les corrections seront intégrées lors d'une prochaine actualisation de la transcription. Le QR code ci-dessus renvoie vers cette même page, accessible également à l'adresse \url{https://github.com/grostim/HistoireOuroux/issues}, afin de faciliter le signalement depuis la version imprimée.
+
+Les versions actualisées de ce document, au format PDF et au format EPUB --- adapté aux liseuses et autres lecteurs numériques --- sont disponibles sur le dépôt GitHub du projet :
+
+\begin{center}
+    \href{https://github.com/grostim/HistoireOuroux/releases/latest}{\textbf{Consulter les versions actualisées sur GitHub}}
+\end{center}
+
+\vfill
+
+\begin{flushright}
+    \textit{Timothée Gros}
+\end{flushright}
+
+\newpage
+\pagestyle{fancy}
+
+% ===================================================
+% AVERTISSEMENT & LISTE DES SOUSCRIPTEURS
+% Page imprimée 3 — vue 6
+% ===================================================
+\chapter{Avertissement et liste des souscripteurs}
+
+% ===================================================
+% PRÉFACE
+% Page imprimée 5 — vue 8
+% ===================================================
+\chapter{Préface}
+
+% ===================================================
+% ÉTYMOLOGIE DU NOM D'OUROUX
+% Page imprimée 7 — vue 10
+% ===================================================
+\chapter{Étymologie du nom d'Ouroux}
+
+% ===================================================
+% TOPOGRAPHIE
+% Page imprimée 9 — vue 12
+% ===================================================
+\chapter{Topographie}
+
+% ===================================================
+% PÉRIODE ROMAINE
+% Page imprimée 12 — vue 15
+% ===================================================
+\chapter{Période romaine}
+
+% ===================================================
+% PÉRIODE BURGONDE
+% Page imprimée 20 — vue 23
+% ===================================================
+\chapter{Période burgonde}
+
+% ===================================================
+% PÉRIODE FÉODALE
+% Page imprimée 29 — vue 32
+% ===================================================
+\chapter{Période féodale}
+
+% ===================================================
+% NAGU
+% Page imprimée 35 — vue 38
+% ===================================================
+\chapter{Nagu}
+
+% ===================================================
+% ARCIS
+% Page imprimée 47 — vue 50
+% ===================================================
+\chapter{Arcis}
+
+% ===================================================
+% LA CARELLE
+% Page imprimée 51 — vue 54
+% ===================================================
+\chapter{La Carelle}
+
+% ===================================================
+% MONTAULIEU
+% Page imprimée 61 — vue 64
+% ===================================================
+\chapter{Montaulieu}
+
+% ===================================================
+% GROSBOIS
+% Page imprimée 62 — vue 65
+% ===================================================
+\chapter{Grosbois}
+
+% ===================================================
+% AUTRES FAMILLES ANCIENNES
+% Page imprimée 67 — vue 70
+% ===================================================
+\chapter{Autres familles anciennes}
+
+% ===================================================
+% ALLOIGNET
+% Page imprimée 72 — vue 75
+% ===================================================
+\chapter{Alloignet}
+
+% ===================================================
+% BOURG — POPULATION — INDUSTRIES, ETC.
+% Page imprimée 75 — vue 78
+% ===================================================
+\chapter{Bourg, population, industries, etc.}
+
+% ===================================================
+% CURES D'OUROUX
+% Page imprimée 96 — vue 99
+% ===================================================
+\chapter{Curés d'Ouroux}
+
+% ===================================================
+% LA GRANDE RÉVOLUTION
+% Page imprimée 141 — vue 144
+% ===================================================
+\chapter{La Grande Révolution}
+
+% ===================================================
+% VICAIRES D'OUROUX
+% Page imprimée 167 — vue 170
+% ===================================================
+\chapter{Vicaires d'Ouroux}
+
+% ===================================================
+% PRÊTRES NÉS À OUROUX
+% Page imprimée 176 — vue 179
+% ===================================================
+\chapter{Prêtres nés à Ouroux}
+
+% ===================================================
+% L'ÉGLISE D'OUROUX
+% Page imprimée 181 — vue 184
+% ===================================================
+\chapter{L'église d'Ouroux}
+
+% ===================================================
+% LES ÉCOLES D'OUROUX
+% Page imprimée 231 — vue 234
+% ===================================================
+\chapter{Les écoles d'Ouroux}
+
+% ===================================================
+% ÉCOLE DE FILLES
+% Page imprimée 233 — vue 236
+% ===================================================
+\section*{École de filles}
+
+% ===================================================
+% ÉCOLE DE GARÇONS
+% Page imprimée 245 — vue 248
+% ===================================================
+\section*{École de garçons}
+
+% ===================================================
+% NOTES SUR LA LAÏCISATION ET LES SECOURS AUX ÉCOLES LIBRES
+% Page imprimée 257 — vue 260
+% ===================================================
+\section*{Notes sur la laïcisation et les secours accordés aux écoles libres}
+
+% ===================================================
+% PÉRIODE CONTEMPORAINE
+% Page imprimée 261 — vue 264
+% ===================================================
+\chapter{Période contemporaine}
+
+% ===================================================
+% CONCLUSION
+% Page imprimée 275 — vue 278
+% ===================================================
+\chapter{Conclusion}
+
+% ===================================================
+% AVENAS ET SON ÉGLISE
+% Page imprimée 277 — vue 280
+% ===================================================
+\chapter{Avenas et son église}
+
+\end{document}
