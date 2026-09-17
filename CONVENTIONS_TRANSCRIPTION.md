@@ -176,7 +176,7 @@ Découpage repris de la **table des matières de l'édition originale** (pages i
 | 4 | Période burgonde | 20–28 | 23–31 | Transcrite, illustrée et vérifiée |
 | 5 | Période féodale | 29–34 | 32–37 | Transcrite, illustrée et vérifiée |
 | 6 | Nagu | 35–46 | 38–49 | Transcrit, illustré et compilé |
-| 7 | Arcis | 47 | 50 | À transcrire |
+| 7 | Arcis | 47–50 | 50–53 | Transcrit, compilé |
 | 8 | La Carelle | 51 | 54 | À transcrire |
 | 9 | Montaulieu | 61 | 64 | À transcrire |
 | 10 | Grosbois | 62 | 65 | À transcrire |
