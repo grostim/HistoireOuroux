@@ -199,7 +199,7 @@ Découpage repris de la **table des matières de l'édition originale** (pages i
 | 20d | Guerre 1939–1945, bombardement | 268–269 | 271–272 | Transcrit, compilé |
 | 20e | Vieilles maisons | 270 | 273 | Transcrit, compilé |
 | 20f | Progrès social et matériel | 271–274 | 274–277 | Transcrit, compilé |
-| 21 | Conclusion | 275 | 278 | À transcrire |
+| 21 | Conclusion | 275 | 278 | Transcrit, compilé |
 | 22 | Avenas et son église | 277 | 280 | À transcrire |
 | — | Table des matières et table des illustrations | 282–283 | 285–286 | Non transcrites (reconstituées automatiquement par LaTeX) |
 
