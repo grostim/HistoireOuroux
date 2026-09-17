@@ -188,10 +188,10 @@ Découpage repris de la **table des matières de l'édition originale** (pages i
 | 16 | Vicaires d'Ouroux | 167–175 | 170–178 | Transcrit, compilé |
 | 17 | Prêtres nés à Ouroux | 176–180 | 179–183 | Transcrit, compilé |
 | 18 | L'église d'Ouroux | 181–230 | 184–233 | Transcrit, compilé |
-| 19 | Les écoles d'Ouroux | 231 | 234 | À transcrire |
-| 19a | École de filles | 233 | 236 | À transcrire |
-| 19b | École de garçons | 245 | 248 | À transcrire |
-| 19c | Notes sur la laïcisation et les secours accordés aux écoles libres | 257 | 260 | À transcrire |
+| 19 | Les écoles d'Ouroux | 231–259 | 234–262 | Transcrit, compilé |
+| 19a | École de filles | 233–244 | 236–247 | Transcrit, compilé |
+| 19b | École de garçons | 245–256 | 248–259 | Transcrit, compilé |
+| 19c | Notes sur la laïcisation et les secours accordés aux écoles libres | 257–260 | 260–263 | Transcrit, compilé |
 | 20 | Période contemporaine | 261 | 264 | À transcrire |
 | 20a | Un maire chrétien | 262 | 265 | À transcrire |
 | 20b | Guerre 1914–1918 | 264 | 267 | À transcrire |
