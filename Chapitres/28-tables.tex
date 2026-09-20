@@ -62,6 +62,7 @@ Voir à la page suivante la table des illustrations.
 \vspace{-0.4em}
 \enlargethispage{4\baselineskip}
 
+\iffalse
 \begin{multicols}{2}
 \fontsize{7}{7.5}\selectfont
 \setlength{\columnsep}{1em}
@@ -168,6 +169,24 @@ Voir à la page suivante la table des illustrations.
 \item[121] clocher d'Avenas et croix \dotfill 279
 \item[122] l'autel d'Avenas \dotfill 281
 \item[123] inscription de l'autel \dotfill 282
+\end{description}
+\end{multicols}
+\fi
+
+% Cette table est produite à partir des illustrations réellement incluses.
+% Les pages sont celles de la pagination imprimée de l'édition originale.
+\immediate\closeout\ourouxillustrationfile
+\begin{multicols}{2}
+\fontsize{7}{7.5}\selectfont
+\setlength{\columnsep}{1em}
+\noindent\textbf{N\textsuperscript{o}\hfill Page}
+
+\begin{description}
+\setlength{\itemsep}{-0.5ex}
+\setlength{\parsep}{0pt}
+\setlength{\topsep}{0pt}
+\setlength{\partopsep}{0pt}
+\input{\jobname.ouroux}
 \end{description}
 \end{multicols}
 
