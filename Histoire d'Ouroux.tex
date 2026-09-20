@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
+\usepackage{microtype}
 \usepackage[french]{babel}
 \usepackage{amsmath}
 \usepackage{graphicx}
@@ -34,6 +35,29 @@
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftsecfont}{\normalfont}
 \renewcommand{\cftsecpagefont}{\normalfont}
+
+% Les pages d'ouverture du manuscrit composent les grandes rubriques en
+% capitales espacées et centrées. La numérotation reste disponible dans le
+% sommaire et les en-têtes, mais ne surcharge pas le titre de la page.
+\makeatletter
+\newcommand{\ourouxchaptertitle}[1]{%
+    {\large\bfseries\textls[110]{\MakeUppercase{#1}}\par}%
+}
+\renewcommand{\@makechapterhead}[1]{%
+    \vspace*{30\p@}%
+    {\parindent\z@\centering\normalfont
+     \interlinepenalty\@M
+     \ourouxchaptertitle{#1}%
+     \vskip 34\p@}%
+}
+\renewcommand{\@makeschapterhead}[1]{%
+    \vspace*{30\p@}%
+    {\parindent\z@\centering\normalfont
+     \interlinepenalty\@M
+     \ourouxchaptertitle{#1}%
+     \vskip 34\p@}%
+}
+\makeatother
 
 % Configuration des en-têtes et pieds de page
 \pagestyle{fancy}
