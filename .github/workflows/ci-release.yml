@@ -102,7 +102,8 @@ jobs:
             texlive-fonts-recommended \
             lmodern \
             cm-super \
-            pandoc
+            pandoc \
+            poppler-utils
 
       - name: Compilation LaTeX en PDF
         run: |
@@ -113,6 +114,35 @@ jobs:
             "Histoire d'Ouroux.release.tex"
           # Renommage de l'artefact PDF sans espaces
           cp "Histoire d'Ouroux.release.pdf" "Histoire_d_Ouroux.pdf"
+
+      - name: Rendu PDF pour contrôle visuel
+        if: always()
+        run: |
+          mkdir -p qa/pdf-render
+          if [ -f "Histoire_d_Ouroux.pdf" ]; then
+            pdfinfo "Histoire_d_Ouroux.pdf" > qa/pdf-info.txt
+            pdftoppm -png -r 72 "Histoire_d_Ouroux.pdf" qa/pdf-render/page
+          fi
+
+      - name: Archivage du rendu PDF de contrôle
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: histoire-ouroux-pdf-qa
+          if-no-files-found: ignore
+          path: |
+            qa/pdf-info.txt
+            qa/pdf-render/
+            Histoire d'Ouroux.release.log
+
+      - name: Contrôles qualité du PDF
+        run: |
+          python3 scripts/check_pdf_layout.py \
+            --source "Histoire d'Ouroux.tex" \
+            --pdf Histoire_d_Ouroux.pdf \
+            --log "Histoire d'Ouroux.release.log" \
+            --min-pages 190 \
+            --max-pages 220
 
       - name: Génération du format Markdown via Pandoc
         run: |
