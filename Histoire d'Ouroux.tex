@@ -15,8 +15,19 @@
 \usepackage{parskip}
 \usepackage{setspace}
 \usepackage{fancyhdr}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tocloft}
 \usepackage{qrcode}
+
+% Le sommaire doit rester compact et conserver les points de conduite de
+% l'édition originale, tout en laissant apparaître les entrées ajoutées par
+% la transcription numérique.
+\setlength{\cftbeforechapskip}{0pt}
+\setlength{\cftchapindent}{0pt}
+\setlength{\cftchapnumwidth}{2.4em}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftchapfont}{\normalfont}
+\renewcommand{\cftchappagefont}{\normalfont}
 
 % Configuration des en-têtes et pieds de page
 \pagestyle{fancy}
@@ -52,7 +63,11 @@
 
 \newpage
 \pagestyle{plain}
+\begingroup
+\small
+\setlength{\parskip}{0pt}
 \tableofcontents
+\endgroup
 \newpage
 
 \chapter*{Note du transcripteur}
