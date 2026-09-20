@@ -176,19 +176,17 @@ Voir à la page suivante la table des illustrations.
 % Cette table est produite à partir du registre central des illustrations.
 % Les pages sont celles de la pagination imprimée de l'édition originale.
 \begin{multicols}{2}
-\fontsize{6.5}{6.6}\selectfont
+\fontsize{7}{7.5}\selectfont
 \setlength{\columnsep}{1em}
 \noindent\textbf{N\textsuperscript{o}\hfill Page}
 
 \begin{description}
-\setlength{\itemsep}{-0.8ex}
+\setlength{\itemsep}{-0.5ex}
 \setlength{\parsep}{0pt}
 \setlength{\topsep}{0pt}
 \setlength{\partopsep}{0pt}
-\setcounter{ourouxillustration}{0}
 \renewcommand{\ourouxillustrationmetadata}[3]{%
-    \stepcounter{ourouxillustration}%
-    \item[\theourouxillustration] #2 \dotfill #3}
+    \item[#1] #2 \dotfill #3}
 \input{Chapitres/illustrations-meta.tex}
 \end{description}
 \end{multicols}
