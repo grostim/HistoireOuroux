@@ -45,15 +45,31 @@ Avenas \& son église & 277 \\
 Voir à la page suivante la table des illustrations.
 
 \clearpage
-\chapter*{Table des illustrations}
+\fancypagestyle{illustrationstable}{%
+    \fancyhf{}
+    \fancyhead[C]{\textendash\ \thepage\ \textendash}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+\thispagestyle{illustrationstable}
 \addcontentsline{toc}{chapter}{Table des illustrations}
 
+\begin{center}
+{\large\bfseries Table des illustrations\par}
+\end{center}
+\vspace{-0.4em}
+\enlargethispage{4\baselineskip}
+
 \begin{multicols}{2}
-\small
-\raggedcolumns
+\fontsize{7}{7.5}\selectfont
+\setlength{\columnsep}{1em}
 \noindent\textbf{N\textsuperscript{o}\hfill Page}
 
 \begin{description}
+\setlength{\itemsep}{-0.5ex}
+\setlength{\parsep}{0pt}
+\setlength{\topsep}{0pt}
+\setlength{\partopsep}{0pt}
 \item[1] clocher d'Ouroux \dotfill 3
 \item[2] un oratoire \dotfill 7
 \item[3] plan d'Ouroux \dotfill 10
@@ -106,6 +122,14 @@ Voir à la page suivante la table des illustrations.
 \item[60] église de St-Jacques \dotfill 156
 \item[61] église de St-Mamert \dotfill 164
 \item[62] église d'Ouroux (clocher) \dotfill 181
+\end{description}
+\columnbreak
+\noindent\textbf{N\textsuperscript{o}\hfill Page}
+\begin{description}
+\setlength{\itemsep}{-0.5ex}
+\setlength{\parsep}{0pt}
+\setlength{\topsep}{0pt}
+\setlength{\partopsep}{0pt}
 \item[63] abside église d'Ouroux \dotfill 183
 \item[64] autel de St-Antoine \dotfill 187
 \item[65] plan de l'église d'Ouroux \dotfill 190
@@ -143,11 +167,11 @@ Voir à la page suivante la table des illustrations.
 \item[122] l'autel d'Avenas \dotfill 281
 \item[123] inscription de l'autel \dotfill 282
 \end{description}
+\end{multicols}
 
-\vfill
 \begin{center}
+\footnotesize
 \textit{Enluminures diverses... passim.}
 
 Ce livre a été tiré à 200 exemplaires, tous numérotés en seconde page.
 \end{center}
-\end{multicols}
