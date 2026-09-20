@@ -4,6 +4,7 @@
 % ===================================================
 \clearpage
 \fancyhead[R]{}
+\iffalse
 \chapter*{Table des matières}
 \addcontentsline{toc}{chapter}{Table des matières}
 
@@ -44,6 +45,7 @@ Avenas \& son église & 277 \\
 
 Voir à la page suivante la table des illustrations.
 
+\fi
 \clearpage
 \fancypagestyle{illustrationstable}{%
     \fancyhf{}
@@ -60,6 +62,7 @@ Voir à la page suivante la table des illustrations.
 \vspace{-0.4em}
 \enlargethispage{4\baselineskip}
 
+\iffalse
 \begin{multicols}{2}
 \fontsize{7}{7.5}\selectfont
 \setlength{\columnsep}{1em}
@@ -166,6 +169,25 @@ Voir à la page suivante la table des illustrations.
 \item[121] clocher d'Avenas et croix \dotfill 279
 \item[122] l'autel d'Avenas \dotfill 281
 \item[123] inscription de l'autel \dotfill 282
+\end{description}
+\end{multicols}
+\fi
+
+% Cette table est produite à partir du registre central des illustrations.
+% Les pages sont calculées à partir de la pagination PDF de cette version.
+\begin{multicols}{2}
+\fontsize{7}{7.5}\selectfont
+\setlength{\columnsep}{1em}
+\noindent\textbf{N\textsuperscript{o}\hfill Page}
+
+\begin{description}
+\setlength{\itemsep}{-0.5ex}
+\setlength{\parsep}{0pt}
+\setlength{\topsep}{0pt}
+\setlength{\partopsep}{0pt}
+\renewcommand{\ourouxillustrationmetadata}[3]{%
+    \item[#1] #2 \dotfill #3}
+\input{Chapitres/illustrations-meta.tex}
 \end{description}
 \end{multicols}
 

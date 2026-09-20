@@ -2,6 +2,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
+\usepackage{courier}
+\usepackage{microtype}
 \usepackage[french]{babel}
 \usepackage{amsmath}
 \usepackage{graphicx}
@@ -34,6 +36,50 @@
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftsecfont}{\normalfont}
 \renewcommand{\cftsecpagefont}{\normalfont}
+
+% Les légendes restent discrètes et sans numérotation automatique : le texte
+% original les traite comme des annotations, non comme des figures modernes.
+\newcommand{\ourouxcaption}[1]{%
+    \par\smallskip\begingroup\centering\textit{#1}\par\endgroup}
+
+% Registre central des illustrations. Les métadonnées renvoient aux images
+% elles-mêmes afin que la table affiche automatiquement leur page PDF.
+\newcommand{\ourouxillustrationmetadata}[3]{}
+\input{Chapitres/illustrations-meta.tex}
+
+% Chaque image devient une ancre de pagination pour la table finale. Le
+% chemin du fichier est suffisamment stable et unique pour servir d'identifiant.
+\let\ourouxoriginalincludegraphics\includegraphics
+\renewcommand{\includegraphics}[2][]{%
+    \ourouxoriginalincludegraphics[#1]{#2}%
+    \label{ouroux-image:#2}}
+
+% Sous-titres internes et documents cités suivent une hiérarchie commune.
+\newcommand{\ourouxsubtitle}[1]{%
+    \par\medskip\noindent\textbf{#1}\par\smallskip}
+
+% Les pages d'ouverture du manuscrit composent les grandes rubriques en
+% capitales espacées et centrées. La numérotation reste disponible dans le
+% sommaire et les en-têtes, mais ne surcharge pas le titre de la page.
+\makeatletter
+\newcommand{\ourouxchaptertitle}[1]{%
+    {\Large\ttfamily\mdseries\textls[110]{\MakeUppercase{#1}}\par}%
+}
+\renewcommand{\@makechapterhead}[1]{%
+    \vspace*{30\p@}%
+    {\parindent\z@\centering\normalfont
+     \interlinepenalty\@M
+     \ourouxchaptertitle{#1}%
+     \vskip 34\p@}%
+}
+\renewcommand{\@makeschapterhead}[1]{%
+    \vspace*{30\p@}%
+    {\parindent\z@\centering\normalfont
+     \interlinepenalty\@M
+     \ourouxchaptertitle{#1}%
+     \vskip 34\p@}%
+}
+\makeatother
 
 % Configuration des en-têtes et pieds de page
 \pagestyle{fancy}
@@ -310,7 +356,7 @@ Grosne à peu de distance du bourg d'Ouroux.
 \begin{figure}[p]
     \centering
     \includegraphics[width=0.88\textwidth]{Illustrations/illus-02-plan-ouroux.png}
-    \caption*{\textbf{Plan d'Ouroux}}
+    \ourouxcaption{Plan d’Ouroux}
     \label{fig:plan-ouroux}
 \end{figure}
 
@@ -457,7 +503,7 @@ les dernières traces.
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.82\textwidth]{Illustrations/illus-19-chateau-guillin-vallee.png}
-    \caption*{\textit{Château de Guillin et vallée d'Ouroux}}
+    \ourouxcaption{Château de Guillin et vallée d’Ouroux}
     \label{fig:chateau-guillin}
 \end{figure}
 
@@ -569,7 +615,7 @@ période de la conquête romaine.
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.45\textwidth]{Illustrations/illus-08-urnes-funeraires.png}
-    \caption*{\textit{Urnes funéraires romaines}}
+    \ourouxcaption{Urnes funéraires romaines}
     \label{fig:urnes-funeraires}
 \end{figure}
 
@@ -638,7 +684,7 @@ plus importantes que la nôtre n'ont laissé aucune trace dans l'histoire !
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.42\textwidth]{Illustrations/illus-10-masques-tragiques.png}
-    \caption*{\textit{Masques tragiques} (fouilles de Pompéi)}
+    \ourouxcaption{Masques tragiques (fouilles de Pompéi)}
     \label{fig:masques-tragiques}
 \end{figure}
 
