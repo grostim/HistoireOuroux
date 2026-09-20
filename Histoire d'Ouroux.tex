@@ -40,12 +40,19 @@
 % Les légendes restent discrètes et sans numérotation automatique : le texte
 % original les traite comme des annotations, non comme des figures modernes.
 \newcommand{\ourouxcaption}[1]{%
-    \par\smallskip\centering\textit{#1}\par}
+    \par\smallskip\begingroup\centering\textit{#1}\par\endgroup}
 
-% Registre central des illustrations. Les métadonnées conservent la page
-% imprimée de l'édition originale, indépendante de la pagination numérique.
+% Registre central des illustrations. Les métadonnées renvoient aux images
+% elles-mêmes afin que la table affiche automatiquement leur page PDF.
 \newcommand{\ourouxillustrationmetadata}[3]{}
 \input{Chapitres/illustrations-meta.tex}
+
+% Chaque image devient une ancre de pagination pour la table finale. Le
+% chemin du fichier est suffisamment stable et unique pour servir d'identifiant.
+\let\ourouxoriginalincludegraphics\includegraphics
+\renewcommand{\includegraphics}[2][]{%
+    \ourouxoriginalincludegraphics[#1]{#2}%
+    \label{ouroux-image:#2}}
 
 % Sous-titres internes et documents cités suivent une hiérarchie commune.
 \newcommand{\ourouxsubtitle}[1]{%
