@@ -52,25 +52,17 @@
     \expandafter\gdef\csname ourouxillustration@page@#1\endcsname{#3}%
 }
 \newcommand{\ourouxrecordillustration}[1]{%
-    \expandafter\ifx\csname ourouxillustration@description@#1\endcsname\relax
-    \else
-        \stepcounter{ourouxillustration}%
-        \edef\ourouxillustrationline{%
-            \noexpand\ourouxlistitem{\theourouxillustration}%
-            {\csname ourouxillustration@description@#1\endcsname}%
-            {\csname ourouxillustration@page@#1\endcsname}}%
-        \immediate\write\ourouxillustrationfile{\ourouxillustrationline}%
-    \fi
+    \stepcounter{ourouxillustration}%
+    \edef\ourouxillustrationline{%
+        \noexpand\ourouxlistitem{\theourouxillustration}%
+        {\csname ourouxillustration@description@#1\endcsname}%
+        {\csname ourouxillustration@page@#1\endcsname}}%
+    \immediate\write\ourouxillustrationfile{\ourouxillustrationline}%
 }
 \newcommand{\ourouxlistitem}[3]{%
     \item[#1] #2 \dotfill #3}
 \input{Chapitres/illustrations-meta.tex}
 \AtBeginDocument{\immediate\openout\ourouxillustrationfile=\jobname.ouroux}
-\let\ourouxoriginalincludegraphics\includegraphics
-\renewcommand{\includegraphics}[2][]{%
-    \ourouxoriginalincludegraphics[#1]{#2}%
-    \ourouxrecordillustration{#2}%
-}
 
 % Sous-titres internes et documents cités suivent une hiérarchie commune.
 \newcommand{\ourouxsubtitle}[1]{%
@@ -130,6 +122,14 @@
         {\scriptsize \textit{\releaseversion}\par}
     \end{flushright}
 \end{titlepage}
+
+% La couverture ne fait pas partie de la table des illustrations ; le registre
+% est donc active juste apres son insertion.
+\let\ourouxoriginalincludegraphics\includegraphics
+\renewcommand{\includegraphics}[2][]{%
+    \ourouxoriginalincludegraphics[#1]{#2}%
+    \ourouxrecordillustration{#2}%
+}
 
 \newpage
 \pagestyle{plain}
