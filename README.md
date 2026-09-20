@@ -23,6 +23,11 @@ Les documents sont automatiquement compilés et mis à disposition dans les troi
 
 *(Vous pouvez également retrouver l'historique complet des versions sur la page des [Releases GitHub](https://github.com/grostim/HistoireOuroux/releases)).*
 
+À chaque compilation, la CI vérifie les références d'illustrations, le format
+et la pagination du PDF, les repères éditoriaux essentiels ainsi que les
+débordements LaTeX. Elle archive également un rendu PNG page par page pour
+permettre une revue visuelle depuis les artefacts du workflow.
+
 ---
 
 ## 📖 Présentation de l'ouvrage
@@ -70,6 +75,8 @@ HistoireOuroux/
 │       └── Page-286.jpg
 ├── Illustrations/                   # Images éditoriales du livre
 ├── Histoire d'Ouroux.tex            # Source LaTeX principal du document
+├── scripts/                         # Contrôles et outils de transcription
+│   └── check_pdf_layout.py           # Contrôles automatisés du PDF compilé
 ├── CONVENTIONS_TRANSCRIPTION.md     # Guide des conventions éditoriales et typographiques
 ├── README.md                        # Présentation du projet et liens de téléchargement
 └── .gitignore                       # Exclusion des fichiers temporaires LaTeX
