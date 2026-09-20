@@ -52,7 +52,8 @@
     \expandafter\gdef\csname ourouxillustration@page@#1\endcsname{#3}%
 }
 \newcommand{\ourouxrecordillustration}[1]{%
-    \ifcsname ourouxillustration@description@#1\endcsname
+    \expandafter\ifx\csname ourouxillustration@description@#1\endcsname\relax
+    \else
         \stepcounter{ourouxillustration}%
         \edef\ourouxillustrationline{%
             \noexpand\ourouxlistitem{\theourouxillustration}%
