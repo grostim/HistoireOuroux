@@ -42,27 +42,11 @@
 \newcommand{\ourouxcaption}[1]{%
     \par\smallskip\centering\textit{#1}\par}
 
-% Registre automatique des illustrations. Les fichiers réellement inclus dans
-% le document alimentent la table finale ; les métadonnées conservent la page
+% Registre central des illustrations. Les métadonnées conservent la page
 % imprimée de l'édition originale, indépendante de la pagination numérique.
-\newwrite\ourouxillustrationfile
 \newcounter{ourouxillustration}
-\newcommand{\ourouxillustrationmetadata}[3]{%
-    \expandafter\gdef\csname ourouxillustration@description@#1\endcsname{#2}%
-    \expandafter\gdef\csname ourouxillustration@page@#1\endcsname{#3}%
-}
-\newcommand{\ourouxrecordillustration}[1]{%
-    \stepcounter{ourouxillustration}%
-    \edef\ourouxillustrationline{%
-        \noexpand\ourouxlistitem{\theourouxillustration}%
-        {\csname ourouxillustration@description@#1\endcsname}%
-        {\csname ourouxillustration@page@#1\endcsname}}%
-    \immediate\write\ourouxillustrationfile{\ourouxillustrationline}%
-}
-\newcommand{\ourouxlistitem}[3]{%
-    \item[#1] #2 \dotfill #3}
+\newcommand{\ourouxillustrationmetadata}[3]{}
 \input{Chapitres/illustrations-meta.tex}
-\AtBeginDocument{\immediate\openout\ourouxillustrationfile=\jobname.ouroux}
 
 % Sous-titres internes et documents cités suivent une hiérarchie commune.
 \newcommand{\ourouxsubtitle}[1]{%
@@ -122,14 +106,6 @@
         {\scriptsize \textit{\releaseversion}\par}
     \end{flushright}
 \end{titlepage}
-
-% La couverture ne fait pas partie de la table des illustrations ; le registre
-% est donc active juste apres son insertion.
-\let\ourouxoriginalincludegraphics\includegraphics
-\renewcommand{\includegraphics}[2][]{%
-    \ourouxoriginalincludegraphics[#1]{#2}%
-    \ourouxrecordillustration{#2}%
-}
 
 \newpage
 \pagestyle{plain}

@@ -173,9 +173,8 @@ Voir à la page suivante la table des illustrations.
 \end{multicols}
 \fi
 
-% Cette table est produite à partir des illustrations réellement incluses.
+% Cette table est produite à partir du registre central des illustrations.
 % Les pages sont celles de la pagination imprimée de l'édition originale.
-\immediate\closeout\ourouxillustrationfile
 \begin{multicols}{2}
 \fontsize{7}{7.5}\selectfont
 \setlength{\columnsep}{1em}
@@ -186,7 +185,11 @@ Voir à la page suivante la table des illustrations.
 \setlength{\parsep}{0pt}
 \setlength{\topsep}{0pt}
 \setlength{\partopsep}{0pt}
-\input{\jobname.ouroux}
+\setcounter{ourouxillustration}{0}
+\renewcommand{\ourouxillustrationmetadata}[3]{%
+    \stepcounter{ourouxillustration}%
+    \item[\theourouxillustration] #2 \dotfill #3}
+\input{Chapitres/illustrations-meta.tex}
 \end{description}
 \end{multicols}
 
