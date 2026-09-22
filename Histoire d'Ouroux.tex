@@ -58,6 +58,19 @@
 \newcommand{\ourouxsubtitle}[1]{%
     \par\medskip\noindent\textbf{#1}\par\smallskip}
 
+% Les lettrines des ouvertures de chapitres sont des fragments restaurés à
+% partir des scans originaux. La marge suspendue réserve leur largeur aux
+% premières lignes sans transformer ces ornements en figures flottantes.
+\newcommand{\ourouxlettrine}[2]{%
+    \begingroup
+    \setbox0=\hbox{\includegraphics[height=2.6\baselineskip]{#1}}%
+    \hangindent=\dimexpr\wd0+0.25em\relax
+    \hangafter=-3
+    \noindent
+    \makebox[0pt][l]{\raisebox{-2\baselineskip}{\smash{\box0}}}%
+    #2\par
+    \endgroup}
+
 % Les pages d'ouverture du manuscrit composent les grandes rubriques en
 % capitales espacées et centrées. La numérotation reste disponible dans le
 % sommaire et les en-têtes, mais ne surcharge pas le titre de la page.
@@ -212,7 +225,7 @@ M.M. N° 1 Mondon de Guillin — N° 2 Famille Larochette (boucher) — N° 3 Vv
 % ===================================================
 \chapter{Préface}
 
-L'auteur de ces pages est un prêtre : Mr le Chanoine Odouard.
+\ourouxlettrine{Illustrations/lettrines/preface.png}{auteur de ces pages est un prêtre : Mr le Chanoine Odouard.}
 
 D'abord vicaire à Ouroux de 1879 à 1892, il devint successivement curé de
 Trades, de St-Bonnet-les-Bruyères et Monsols, où il mourut en Septembre 1929.
@@ -267,7 +280,7 @@ l'abbé Marcel Sivignon que le Curé Odouard est mort.}
     \label{fig:clocher-ouroux}
 \end{wrapfigure}
 
-Le nom d'Ouroux vient du latin \textit{ORATORIUM}, oratoire, c'est-à-dire :
+\ourouxlettrine{Illustrations/lettrines/etymologie.png}{e nom d'Ouroux vient du latin \textit{ORATORIUM}, oratoire, c'est-à-dire :
 lieu où l'on prie. Nous le trouvons ainsi désigné dans les Chartes 76, 155,
 265 du Cartulaire de Macon, vers la fin du dixième siècle : « situé dans le
 pays de Macon, dans l'ager de Fuissé, dans le village d'Ouroux ».
@@ -328,7 +341,7 @@ nom d'Ouroux !
 % ===================================================
 \chapter{Topographie}
 
-La paroisse de St-Antoine d'Ouroux est limitée au sud par Avenas, les Ardillats
+\ourouxlettrine{Illustrations/lettrines/topographie.png}{a paroisse de St-Antoine d'Ouroux est limitée au sud par Avenas, les Ardillats
 et Monsols ; à l'ouest par St-Christophe-la-Montagne ; au nord par St-Mamert et
 St-Jacques-des-Arrêts ; à l'est par Vauxrenard.
 
@@ -406,7 +419,7 @@ depuis le château d'Avenas jusqu'au dessous de Cluny.
     \includegraphics[width=0.38\textwidth]{Illustrations/illus-04-gladiateurs.png}
 \end{wrapfigure}
 
-Ouroux existait-il à l'époque des invasions romaines ? La tradition aussi bien
+\ourouxlettrine{Illustrations/lettrines/romaine.png}{uroux existait-il à l'époque des invasions romaines ? La tradition aussi bien
 que les monuments semblent ne laisser aucun doute à cet égard et le nom même
 d'Oratorium donné à notre localité nous fournit une preuve de son organisation
 religieuse dès les premiers siècles du Christianisme.
