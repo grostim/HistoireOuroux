@@ -73,6 +73,9 @@
     \noindent
     \smash{\makebox[0pt][r]{\raisebox{-3.2\baselineskip}{\box0}}}%
     #2\par
+    \ifnum\prevgraf<4
+        \vspace{\dimexpr(4-\prevgraf)\baselineskip\relax}%
+    \fi
     \endgroup}
 
 % Les pages d'ouverture du manuscrit composent les grandes rubriques en
