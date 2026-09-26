@@ -58,6 +58,30 @@
 \newcommand{\ourouxsubtitle}[1]{%
     \par\medskip\noindent\textbf{#1}\par\smallskip}
 
+% Les lettrines des ouvertures de chapitres sont des fragments restaurés à
+% partir des scans originaux. La marge suspendue réserve leur largeur aux
+% premières lignes sans transformer ces ornements en figures flottantes.
+\newcommand{\ourouxlettrine}[2]{%
+    \begingroup
+    \setbox0=\hbox{#1}%
+    \parshape=5
+        \dimexpr\wd0+0.25em\relax \dimexpr\linewidth-\wd0-0.25em\relax
+        \dimexpr\wd0+0.25em\relax \dimexpr\linewidth-\wd0-0.25em\relax
+        \dimexpr\wd0+0.25em\relax \dimexpr\linewidth-\wd0-0.25em\relax
+        \dimexpr\wd0+0.25em\relax \dimexpr\linewidth-\wd0-0.25em\relax
+        0pt \linewidth
+    \noindent
+    \smash{\makebox[0pt][r]{\raisebox{-3.2\baselineskip}{\box0}}}%
+    #2\par
+    \ifnum\prevgraf=1
+        \vspace{3\baselineskip}%
+    \else\ifnum\prevgraf=2
+        \vspace{2\baselineskip}%
+    \else\ifnum\prevgraf=3
+        \vspace{\baselineskip}%
+    \fi\fi\fi
+    \endgroup}
+
 % Les pages d'ouverture du manuscrit composent les grandes rubriques en
 % capitales espacées et centrées. La numérotation reste disponible dans le
 % sommaire et les en-têtes, mais ne surcharge pas le titre de la page.
@@ -212,7 +236,7 @@ M.M. N° 1 Mondon de Guillin — N° 2 Famille Larochette (boucher) — N° 3 Vv
 % ===================================================
 \chapter{Préface}
 
-L'auteur de ces pages est un prêtre : Mr le Chanoine Odouard.
+\ourouxlettrine{\includegraphics[height=4\baselineskip]{Illustrations/lettrines/lettrine-l.png}}{auteur de ces pages est un prêtre : Mr le Chanoine Odouard.}
 
 D'abord vicaire à Ouroux de 1879 à 1892, il devint successivement curé de
 Trades, de St-Bonnet-les-Bruyères et Monsols, où il mourut en Septembre 1929.
@@ -267,10 +291,11 @@ l'abbé Marcel Sivignon que le Curé Odouard est mort.}
     \label{fig:clocher-ouroux}
 \end{wrapfigure}
 
-Le nom d'Ouroux vient du latin \textit{ORATORIUM}, oratoire, c'est-à-dire :
+\ourouxlettrine{\includegraphics[height=4\baselineskip]{Illustrations/lettrines/lettrine-l.png}}{e nom d'Ouroux vient du latin \textit{ORATORIUM}, oratoire, c'est-à-dire :
 lieu où l'on prie. Nous le trouvons ainsi désigné dans les Chartes 76, 155,
 265 du Cartulaire de Macon, vers la fin du dixième siècle : « situé dans le
 pays de Macon, dans l'ager de Fuissé, dans le village d'Ouroux ».
+}
 
 L'acte de fondation passé par de Bosco, en 1449 et concernant l'érection d'une
 chapelle dédiée à la Sainte Croix, ainsi que diverses reconnaissances
@@ -328,7 +353,7 @@ nom d'Ouroux !
 % ===================================================
 \chapter{Topographie}
 
-La paroisse de St-Antoine d'Ouroux est limitée au sud par Avenas, les Ardillats
+\ourouxlettrine{\includegraphics[height=4\baselineskip]{Illustrations/lettrines/lettrine-l.png}}{a paroisse de St-Antoine d'Ouroux est limitée au sud par Avenas, les Ardillats
 et Monsols ; à l'ouest par St-Christophe-la-Montagne ; au nord par St-Mamert et
 St-Jacques-des-Arrêts ; à l'est par Vauxrenard.
 
@@ -341,6 +366,7 @@ ligne qui court du midi au nord, depuis le Col de Crie jusqu'au sommet des
 montagnes qui dominent la Forest, sur la limite de St-Jacques et de Vauxrenard ;
 elle a dans ce sens, à vol d'oiseau, une longueur de 8 kilomètres ; elle ne
 mesure que 3 kilomètres 500 depuis la limite d'Avenas jusqu'au Razet.
+}
 
 Elle comprend trois vallées principales : celle des Jambons ou de Loire, à
 l'Est ; celle de la Grosne, au centre ; celle de la Carelle à l'Ouest. Ces deux
@@ -406,10 +432,11 @@ depuis le château d'Avenas jusqu'au dessous de Cluny.
     \includegraphics[width=0.38\textwidth]{Illustrations/illus-04-gladiateurs.png}
 \end{wrapfigure}
 
-Ouroux existait-il à l'époque des invasions romaines ? La tradition aussi bien
+\ourouxlettrine{\includegraphics[height=4\baselineskip]{Illustrations/lettrines/lettrine-o.png}}{uroux existait-il à l'époque des invasions romaines ? La tradition aussi bien
 que les monuments semblent ne laisser aucun doute à cet égard et le nom même
 d'Oratorium donné à notre localité nous fournit une preuve de son organisation
 religieuse dès les premiers siècles du Christianisme.
+}
 
 L'histoire ecclésiastique nous a conservé les noms des premiers Apôtres envoyés
 dans nos contrées par St-Pothin et St-Irénée évêques de Lyon : Saint Marcel et
